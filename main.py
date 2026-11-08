@@ -24,16 +24,25 @@ def draw_grid(screen):
             x = cols*CELL_SIZE
             y = rows*CELL_SIZE
 
+            if board[row, col] == 1:
+                
+                pygame.draw.rect(
+                    screen,
+                    (0, 200, 100),
+                    (x,y,CELL_SIZE,CELL_SIZE)
+                )
+
             pygame.draw.rect(screen, (80, 80, 80), (x,y,CELL_SIZE,CELL_SIZE), 1)
 
 
 running = True
 clock = pygame.time.Clock()
 
-# Loop used for current service and refreshing content
+# Loop used for current service and content refreshing
 while running:
 
     for event in pygame.event.get():
+        
         if event.type == pygame.QUIT:
             running = False
 
