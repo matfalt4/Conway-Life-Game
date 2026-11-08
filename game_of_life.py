@@ -1,6 +1,6 @@
 def count_neighbors(board, row, col):
 
-    rows,cols = board.shape()
+    rows,cols = board.shape
 
     neighbors = 0
 
