@@ -40,6 +40,11 @@ def draw_grid(screen):
 running = True
 clock = pygame.time.Clock()
 
+simulation_running = False
+
+UPDATE_INTERVAL = 200
+last_update = pygame.time.get_ticks()
+
 # Loop used for current service and content refreshing
 while running:
 
@@ -59,10 +64,19 @@ while running:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                board = new_generation(board)
+                simulation_running = not simulation_running
 
+
+    current_time = pygame.time.get_ticks()
+
+    # This fragment causes that cells are changing its state every 200+ms, (sth. around 5 times per second).
+    if simulation_running:
+        if current_time - last_update >= UPDATE_INTERVAL:
+            board = new_generation(board)
+            last_update = current_time
+
+        
     screen.fill((25,25,25))
-
     draw_grid(screen)
 
     pygame.display.flip()
