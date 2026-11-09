@@ -1,6 +1,8 @@
 import pygame
 import numpy as np
 
+from game_of_life import new_generation
+
 pygame.init()
 
 CELL_SIZE = 20
@@ -24,7 +26,7 @@ def draw_grid(screen):
             x = cols*CELL_SIZE
             y = rows*CELL_SIZE
 
-            if board[row, col] == 1:
+            if board[rows, cols] == 1:
                 
                 pygame.draw.rect(
                     screen,
@@ -54,6 +56,10 @@ while running:
                 row = y//CELL_SIZE
 
                 board[row, col] = 1-board[row, col]
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                board = new_generation(board)
 
     screen.fill((25,25,25))
 
