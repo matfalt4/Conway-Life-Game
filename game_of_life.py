@@ -1,4 +1,7 @@
-def count_neighbors(board, row, col):
+import numpy as np
+
+
+def count_neighbors(board:np.ndarray, row:int, col:int)->int:
 
     rows,cols = board.shape
 
@@ -17,7 +20,7 @@ def count_neighbors(board, row, col):
 
 ###############################################################################################
 
-def new_generation(board):
+def new_generation(board:np.ndarray)->np.ndarray:
 
     rows,cols = board.shape
 
