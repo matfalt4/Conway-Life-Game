@@ -8,7 +8,7 @@ def count_neighbors(board, row, col):
         for j in range(col-1, col+2):
 
             if i == row and j == col:
-                continue;
+                continue
 
             if 0 <= i < rows and 0 <= j < cols:
                 neighbors += board[i, j]
