@@ -14,3 +14,26 @@ def count_neighbors(board, row, col):
                 neighbors += board[i, j]
 
     return neighbors
+    
+
+
+def new_generation(board):
+
+    rows,cols = board.shape
+
+    new_board = board.copy()
+
+    for row in range(rows):
+        for col in range(cols):
+
+            neighbors = count_neighbors(board, row,col)
+
+            if board[row,col] == 1:
+                if neighbors < 2 or neighbors > 3:
+                    new_board[row,col] = 0
+
+            elif board[row, col] == 0:
+                if neighbors == 3:
+                    new_board[row,col] = 1
+
+    return new_board     
