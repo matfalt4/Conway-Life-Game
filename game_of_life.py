@@ -10,12 +10,12 @@ def count_neighbors(board, row, col):
             if i == row and j == col:
                 continue;
 
-            if 0 <= i < row and 0 <= j < col:
+            if 0 <= i < rows and 0 <= j < cols:
                 neighbors += board[i, j]
 
     return neighbors
-    
 
+###############################################################################################
 
 def new_generation(board):
 
@@ -37,3 +37,5 @@ def new_generation(board):
                     new_board[row,col] = 1
 
     return new_board     
+
+###############################################################################################
