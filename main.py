@@ -18,26 +18,6 @@ pygame.display.set_caption("Conway's Game of Life")
 
 board = np.zeros((ROWS,COLS), dtype=int)
 
-
-def draw_grid(screen):
-
-    for rows in range(ROWS):
-        for cols in range(COLS):
-
-            x = cols*CELL_SIZE
-            y = rows*CELL_SIZE
-
-            if board[rows, cols] == 1:
-                
-                pygame.draw.rect(
-                    screen,
-                    (0, 200, 100),
-                    (x,y,CELL_SIZE,CELL_SIZE)
-                )
-
-            pygame.draw.rect(screen, (80, 80, 80), (x,y,CELL_SIZE,CELL_SIZE), 1)
-
-
 running = True
 clock = pygame.time.Clock()
 
@@ -87,7 +67,7 @@ while running:
 
         
     screen.fill((25,25,25))
-    draw_grid(screen)
+    draw_grid(screen, board, CELL_SIZE)
     text = font.render(f"Generation: {generation}", True, (255,255,255))
     screen.blit(text, (10,10))
 
