@@ -1,7 +1,7 @@
 import pygame
 import numpy as np
 
-def draw_grid(screen, board, CELL_SIZE):
+def draw_grid(screen:pygame.Surface, board:np.ndarray, CELL_SIZE:int)->None:
 
     rows, cols = board.shape
 
