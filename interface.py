@@ -20,3 +20,14 @@ def draw_grid(screen:pygame.Surface, board:np.ndarray, CELL_SIZE:int)->None:
                 )
 
             pygame.draw.rect(screen, (80, 80, 80), (x,y,CELL_SIZE,CELL_SIZE), 1)
+
+
+
+def draw_panel(screen, rows, cell_size, panel_heiht):
+
+    y = rows*cell_size
+
+    pygame.draw.rect(screen,
+                     (45,45,45),
+                     (0,y,screen.get_width(),panel_heiht)
+    )
