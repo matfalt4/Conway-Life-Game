@@ -21,7 +21,7 @@ def draw_grid(screen:pygame.Surface, board:np.ndarray, CELL_SIZE:int)->None:
 
             pygame.draw.rect(screen, (80, 80, 80), (x,y,CELL_SIZE,CELL_SIZE), 1)
 
-
+###############################################################################################
 
 def draw_panel(screen, rows, cell_size, panel_heiht):
 
