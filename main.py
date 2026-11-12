@@ -3,6 +3,8 @@ import numpy as np
 
 from game_of_life import new_generation
 
+form interface import draw_grid
+
 pygame.init()
 font = pygame.font.Font("Arial",24)
 
@@ -10,8 +12,9 @@ CELL_SIZE = 20
 ROWS = 30
 COLS = 40
 
+PANEL_HEIGHT = 60
 WIDTH = COLS*CELL_SIZE
-HEIGHT = ROWS*CELL_SIZE
+HEIGHT = ROWS*CELL_SIZE + PANEL_HEIGHT
 
 screen = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Conway's Game of Life")
