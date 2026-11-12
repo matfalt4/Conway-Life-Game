@@ -23,7 +23,7 @@ def draw_grid(screen:pygame.Surface, board:np.ndarray, CELL_SIZE:int)->None:
 
 ###############################################################################################
 
-def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int)->None:
+def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int, generation:int, font:pygame.font)->None:
 
     y = rows*cell_size
 
