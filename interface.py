@@ -27,7 +27,16 @@ def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int, 
 
     y = rows*cell_size
 
-    pygame.draw.rect(screen,
-                     (45,45,45),
-                     (0,y,screen.get_width(),panel_heiht)
+    pygame.draw.rect(
+        screen,
+        (45,45,45),
+        (0,y,screen.get_width(),panel_heiht)
     )
+
+    text = font.render(
+        f"Generation: {generation}",
+        True,
+        (255,255,255)
+    )
+
+    screen.blit(text, (10, y+15))
