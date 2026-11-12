@@ -23,7 +23,7 @@ def draw_grid(screen:pygame.Surface, board:np.ndarray, CELL_SIZE:int)->None:
 
 ###############################################################################################
 
-def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int, generation:int, font:pygame.font)->None:
+def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int, generation:int, font:pygame.font, sim_run:bool)->None:
 
     y = rows*cell_size
 
@@ -38,5 +38,10 @@ def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int, 
         True,
         (255,255,255)
     )
+
+    if sim_run:
+        status = "Running...:
+    else:
+        status = "Paused"
 
     screen.blit(text, (10, y+15))
