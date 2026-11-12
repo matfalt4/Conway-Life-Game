@@ -44,4 +44,11 @@ def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int, 
     else:
         status = "Paused"
 
+    status_text = font.render(
+        f"Status: {status}",
+        True,
+        (255,255,255)
+    )
+
+    screen.blit(status_text, (250, y+15))
     screen.blit(text, (10, y+15))
