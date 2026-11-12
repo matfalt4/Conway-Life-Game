@@ -3,7 +3,7 @@ import numpy as np
 
 from game_of_life import new_generation
 
-form interface import draw_grid
+form interface import draw_grid, draw_panel
 
 pygame.init()
 font = pygame.font.Font("Arial",24)
@@ -71,6 +71,7 @@ while running:
         
     screen.fill((25,25,25))
     draw_grid(screen, board, CELL_SIZE)
+    draw_panel(screen, ROWS, CELL_SIZE, PANEL_HEIGHT)
     text = font.render(f"Generation: {generation}", True, (255,255,255))
     screen.blit(text, (10,10))
 
