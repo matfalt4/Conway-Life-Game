@@ -71,9 +71,7 @@ while running:
         
     screen.fill((25,25,25))
     draw_grid(screen, board, CELL_SIZE)
-    draw_panel(screen, ROWS, CELL_SIZE, PANEL_HEIGHT)
-    text = font.render(f"Generation: {generation}", True, (255,255,255))
-    screen.blit(text, (10,10))
+    draw_panel(screen, ROWS, CELL_SIZE, PANEL_HEIGHT, generation, font)
 
     pygame.display.flip()
     clock.tick(60)
