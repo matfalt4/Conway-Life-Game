@@ -3,7 +3,7 @@ import numpy as np
 
 from game_of_life import new_generation
 
-form interface import draw_grid, draw_panel
+form interface import draw_grid, draw_panel, draw_button
 
 pygame.init()
 font = pygame.font.Font("Arial",24)
@@ -70,6 +70,11 @@ while running:
                 generation = 0
 
 
+    if simulation_running = True:
+        text_str = "STOP"
+    else:
+        text_str = "START"
+        
     current_time = pygame.time.get_ticks()
 
     # This fragment causes that cells are changing its state every 200+ms, (sth. around 5 times per second).
@@ -83,6 +88,7 @@ while running:
     screen.fill((25,25,25))
     draw_grid(screen, board, CELL_SIZE)
     draw_panel(screen, ROWS, CELL_SIZE, PANEL_HEIGHT, generation, font)
+    draw_button(screen,font,text_str,BUTTON_X,BUTTON_Y,BUTTON_WIDTH,BUTTON_HEIGHT)
 
     pygame.display.flip()
     clock.tick(60)
