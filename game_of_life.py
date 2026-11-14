@@ -13,8 +13,7 @@ def count_neighbors(board:np.ndarray, row:int, col:int)->int:
             if i == row and j == col:
                 continue
 
-            if 0 <= i < rows and 0 <= j < cols:
-                neighbors += board[i, j]
+            neighbors += board[i%rows, j%cols]
 
     return neighbors
 
