@@ -67,6 +67,11 @@ while running:
             if start_button.collidepoint(event.pos):
                 simulation_running = not simulation_running
 
+            if reset_button.collidepoint(event.pos):
+                simulation_running = False
+                board.fill(0)
+                generation = 0
+
         if event.type == pygame.KEYDOWN:
 
             if event.key == pygame.K_SPACE:
@@ -96,7 +101,8 @@ while running:
     screen.fill((25,25,25))
     draw_grid(screen, board, CELL_SIZE)
     draw_panel(screen, ROWS, CELL_SIZE, PANEL_HEIGHT, generation, font)
-    draw_button(screen,font,text_str,BUTTON_X,BUTTON_Y,BUTTON_WIDTH,BUTTON_HEIGHT)
+    draw_button(screen,font,text_str,BUTTON_X,BUTTON_Y,BUTTON_WIDTH,BUTTON_HEIGHT)                                    # START/STOP button
+    draw_button(screen,font,R_BUTTON_TEXT,R_BUTTON_X,R_BUTTON_Y,R_BUTTON_WIDTH,R_BUTTON_HEIGHT)                       # Reset board button
 
     pygame.display.flip()
     clock.tick(60)
