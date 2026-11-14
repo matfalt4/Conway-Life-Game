@@ -21,6 +21,12 @@ BUTTON_Y = ROWS*CELL_SIZE
 BUTTON_WIDTH = 120
 BUTTON_HEIGHT = 40
 
+R_BUTTON_X = 630
+R_BUTTON_Y = ROWS*CELL_SIZE
+R_BUTTON_WIDTH = 150
+R_BUTTON_HEIGHT = 40
+R_BUTTON_TEXT = "RESET BOARD"
+
 screen = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Conway's Game of Life")
 
