@@ -56,7 +56,7 @@ while running:
                 if 0 <= col < COLS and 0 <= row < ROWS:
                     board[row, col] = 1-board[row, col]
 
-            if start_button.collidepoint(event.pos()):
+            if start_button.collidepoint(event.pos):
                 simulation_running = not simulation_running
 
         if event.type == pygame.KEYDOWN:
