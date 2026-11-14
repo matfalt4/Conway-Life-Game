@@ -41,12 +41,13 @@ while running:
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
-                x,y = event.pos
+                x,y = pygame.mouse.get_pos()
 
                 col = x//CELL_SIZE
                 row = y//CELL_SIZE
 
-                board[row, col] = 1-board[row, col]
+                if 0 <= col < COLS and 0 <= row < ROWS:
+                    board[row, col] = 1-board[row, col]
 
         if event.type == pygame.KEYDOWN:
 
