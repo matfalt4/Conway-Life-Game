@@ -55,7 +55,7 @@ def draw_panel(screen:pygame.Surface, rows:int, cell_size:int, panel_heiht:int, 
 
 ###############################################################################################
 
-def draw_button(screen:pygame.Surface, font:pygame.font, text:str, x:float, y:float, width:int, height:int)->pygame.Rect:
+def draw_button(screen:pygame.Surface, font:pygame.font, text:str, x:float, y:float, width:int, height:int)->None:
 
     button = pygame.Rect(x,y,width,height)
 
