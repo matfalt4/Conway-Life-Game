@@ -66,4 +66,3 @@ def draw_button(screen:pygame.Surface, font:pygame.font, text:str, x:float, y:fl
 
     screen.blit(text_surface, text_rect)
 
-    return button
