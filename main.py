@@ -3,7 +3,7 @@ import numpy as np
 
 from game_of_life import new_generation
 
-form interface import draw_grid, draw_panel, draw_button
+from interface import draw_grid, draw_panel, draw_button
 
 pygame.init()
 font = pygame.font.Font("Arial",24)
