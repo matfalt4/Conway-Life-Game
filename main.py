@@ -41,6 +41,7 @@ generation = 0
 # Loop used for current service and content refreshing
 while running:
 
+    # Event Service
     for event in pygame.event.get():
         
         if event.type == pygame.QUIT:
