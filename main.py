@@ -31,6 +31,7 @@ screen = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Conway's Game of Life")
 
 start_button = pygame.Rect(BUTTON_X, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)
+reset_button = pygame.Rect(R_BUTTON_X,R_BUTTON_Y,R_BUTTON_WIDTH,R_BUTTON_HEIGHT)
 
 board = np.zeros((ROWS,COLS), dtype=int)
 
