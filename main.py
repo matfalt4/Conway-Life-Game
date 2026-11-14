@@ -16,8 +16,15 @@ PANEL_HEIGHT = 60
 WIDTH = COLS*CELL_SIZE
 HEIGHT = ROWS*CELL_SIZE + PANEL_HEIGHT
 
+BUTTON_X = 500
+BUTTON_Y = ROWS*CELL_SIZE
+BUTTON_WIDTH = 120
+BUTTON_HEIGHT = 40
+
 screen = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Conway's Game of Life")
+
+start_button = pygame.Rect(BUTTON_X, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)
 
 board = np.zeros((ROWS,COLS), dtype=int)
 
@@ -48,6 +55,9 @@ while running:
 
                 if 0 <= col < COLS and 0 <= row < ROWS:
                     board[row, col] = 1-board[row, col]
+
+            if start_button.collidepoint(event.pos()):
+                simulation_running = not simulation_running
 
         if event.type == pygame.KEYDOWN:
 
