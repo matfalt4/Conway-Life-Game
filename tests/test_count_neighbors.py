@@ -6,7 +6,7 @@ from game_of_life import count_neighbors
 
 class TestCountNeighbors(unittest.TestCase):
 
-    def test_three_neighbors(self):
+    def test_four_neighbors(self):
 
         board = np.array([
             [0,1,0],
